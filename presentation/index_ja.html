@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head lang="ja">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Cyrhades CTF</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #xxx</h3>
+                            <h2 class="section-title">SQL Murder Mystery</h2>
+                            <p>
+SQL Murder Mystery は、架空の殺人事件を解決しながら SQL 言語を楽しく学び実践できるインタラクティブな推理ゲームです。目撃者の証言、人物、場所、さまざまな手がかりが含まれるデータベースを活用し、プレイヤーはデータをクエリして真犯人を突き止めます。
+<br /><br />
+目的は、SQL クエリを駆使して捜査を進めることです。情報の検索、結果のフィルタリング、複数テーブルの結合、データの分析を通じて事件の全貌を再現し、殺人犯を特定します。
+<br /><br />
+このプロジェクトは、SQL の学習、論理的思考、謎解きを没入感のあるゲーム形式で融合させています。SELECT、WHERE、JOIN、ORDER BY、GROUP BY、サブクエリなどの基本概念を身につけるための優れた演習となります。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>SQL Murder Mystery</h3>
+                            <p class="section-subtitle">
+                                公式リンク:
+                                <a target="_blank" href="https://mystery.knightlab.com/">https://mystery.knightlab.com/</a>
+                                <br />
+                                著者: Joon Park and Cathy He
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>学習</h3>
+                            <h2 class="section-title">ドキュメントと動画</h2>
+                            <p class="section-subtitle">
+                                現在利用可能なドキュメントはありません
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ヘルプ</h3>
+                            <h2 class="section-title">ヒントと手がかり</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discord スレッド</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="ページ上部へ戻る" title="トップへ戻る"></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+/* datatable */
+
+.datatable {
+    border: solid 1px grey;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.datatable thead,
+td {
+    padding: 3px;
+    border: solid 1px grey;
+}
+
+.datatable thead {
+    background: lightgrey;
+    font-weight: bold;
+}
+
+
+/* sql quiz component */
+
+sql-quiz .sqlQuizHomeDiv {
+    margin: 1em 0em;
+    background: #f9f9f9;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizTitle {
+    font-weight: 700;
+}
+
+sql-quiz .sqlQuizDescription {}
+
+sql-quiz .sqlQuizInputArea {
+    line-height: 130%;
+    min-width: 100%;
+}
+
+sql-quiz .sqlQuizInputArea .sqlOption {
+    min-width: 100%;
+    margin: 0.5em 0em;
+}
+
+sql-quiz input[type=checkbox] {
+    transform: scale(1.5);
+    float: left;
+}
+
+sql-quiz .sqlOption .optionText {
+    display: table;
+}
+
+sql-quiz .sqlOption .hintSpan {
+    /*when revealed, display: table-row;*/
+    display: none;
+    color: blue;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizInputArea input {
+    margin-right: 1em;
+    background: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+sql-quiz .sqlQuizOutputArea .returnOkay {
+    margin-top: 0.5em;
+}
+
+
+/* sql exercise component */
+
+sql-exercise .sqlExHomeDiv {
+    margin: 1em 0em;
+    font-family: Roboto, sans-serif;
+    background: #f9f9f9;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+sql-exercise .sqlExQuestion {
+    font-weight: 700;
+}
+
+sql-exercise .sqlExComment {
+    font-weight: 200;
+}
+
+sql-exercise form {
+    display: block;
+}
+
+sql-exercise .sqlExInputArea {
+    line-height: 130%;
+    min-width: 100%;
+}
+
+sql-exercise .sqlExOutputArea {
+    max-width: 52rem;
+    overflow: auto;
+    background: #f9f9f9;
+}
+
+sql-exercise .sqlExOutputArea .returnOkay {
+    margin-top: 0.5em;
+}
+
+sql-exercise .sqlExOutputArea .returnError {
+    margin-top: 0.5em;
+    color: red;
+}
+
+sql-exercise .CodeMirror {
+    margin: 0.5em 0em;
+}
+
+sql-exercise .sqlExInputArea input {
+    margin-right: 1em;
+    background: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+#experienced-schema {
+    display: none;
+}
+
+#experienced-schema.show {
+    display: block;
+}
+
+/* =========================================================
+   RTL Support for Arabic (and any future RTL languages)
+   ========================================================= */
+
+html[dir="rtl"] body,
+html[dir="rtl"] div,
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] span,
+html[dir="rtl"] label,
+html[dir="rtl"] form,
+html[dir="rtl"] section,
+html[dir="rtl"] header,
+html[dir="rtl"] footer,
+html[dir="rtl"] nav,
+html[dir="rtl"] li {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] .text-align-center,
+html[dir="rtl"] .product-logo,
+html[dir="rtl"] .product-tagline,
+html[dir="rtl"] .copyright {
+    text-align: center !important;
+}
+
+html[dir="rtl"] [class*="col-"],
+html[dir="rtl"] [class*="column-"] {
+    float: right;
+}
+
+html[dir="rtl"] .navbar .nav-right {
+    float: left !important;
+}
+
+html[dir="rtl"] .navbar .logo {
+    float: right !important;
+}
+
+html[dir="rtl"] sql-quiz input[type=checkbox] {
+    float: right;
+    margin-left: 0.75em;
+    margin-right: 0;
+}
+
+html[dir="rtl"] sql-exercise .sqlExInputArea input,
+html[dir="rtl"] sql-quiz .sqlQuizInputArea input {
+    margin-left: 1em;
+    margin-right: 0;
+}
+
+/* Ensure code, SQL editors, tables and tech tokens remain LTR */
+html[dir="rtl"] .CodeMirror,
+html[dir="rtl"] .CodeMirror-lines,
+html[dir="rtl"] .CodeMirror-scroll,
+html[dir="rtl"] .CodeMirror-sizer,
+html[dir="rtl"] pre,
+html[dir="rtl"] code,
+html[dir="rtl"] .datatable,
+html[dir="rtl"] textarea {
+    direction: ltr !important;
+    text-align: left !important;
+}

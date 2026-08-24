@@ -1,0 +1,14 @@
+services:
+  ho-webserver:
+    build:
+      context: .
+      dockerfile: .docker/webserver/Dockerfile
+    environment:
+      - HOOS_CTF_EMAIL=${HOOS_CTF_EMAIL:-}
+      - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
+      - LANGUAGE=${LANGUAGE:-fr}
+    labels:
+      ho.ctf.cyrhades: "challenge"
+    ports:
+      - ${PORT}:80
+    restart: always

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cloud.typenetwork.com/projects/5433/fontface.css" />
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/css/orangeline.min.css" />
+    <!-- /CSS -->
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/favicons/manifest.json">
+    <link rel="mask-icon" href="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /FAVICONS -->
+
+    <title>SQL 살인 사건 미스터리 - The SQL Murder Mystery</title>
+    <!-- Meta -->
+    <meta name="keywords" content="SQL, databases, game, fun">
+    <meta name="description" content="SQL 쿼리를 실행하여 살인 사건을 해결하세요. 초보자부터 숙련된 SQL 사용자까지 즐길 수 있습니다.">
+    <!-- /Meta -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SQL 살인 사건 미스터리 - The SQL Murder Mystery" />
+    <meta property="og:description" content="SQL 쿼리를 실행하여 살인 사건을 해결하세요. 초보자부터 숙련된 SQL 사용자까지 즐길 수 있습니다." />
+    <meta property="og:image" content="http://mystery.knightlab.com/174092-clue-illustration.png" />
+    <meta property="og:url" content="http://mystery.knightlab.com" />
+    <meta property="og:site_name" content="Knight Lab's SQL Murder Mystery" />
+    <meta property="fb:app_id" content="2361935160801585" />
+    <!-- /Open Graph -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="SQL 살인 사건 미스터리 - The SQL Murder Mystery">
+    <meta name="twitter:description" content="SQL 쿼리를 실행하여 살인 사건을 해결하세요. 초보자부터 숙련된 SQL 사용자까지 즐길 수 있습니다.">
+    <meta name="twitter:image" content="http://mystery.knightlab.com/174092-clue-illustration.png">
+    <meta name="twitter:site" content="@knightlab">
+    <!-- /Twitter Card -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
+    </link>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/neat.css" />
+
+    <script src="https://unpkg.com/@webcomponents/custom-elements@1.2.0/custom-elements.min.js"></script>
+    <script src="scripts/codemirror.js"></script>
+    <script src="scripts/codemirrorsql.js"></script>
+    <script src="scripts/autorefresh.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        window.onload = () => loadData('sql-murder-mystery.db');
+    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8F4WPDMPL5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8F4WPDMPL5');
+</script>
+</head>
+
+<body>
+    <nav id="navbar-product-top" class="navbar navbar-dark">
+        <ul>
+            <li class="logo">
+                <a href="http://knightlab.com">
+                    <img src="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/knightlab-dark.png" />
+                </a>
+            </li>
+        </ul>
+        <div class="nav-mobile-menu">
+            <button class="button-plain">
+        <span class="icon-menu"></span>
+      </button>
+        </div>
+        <ul class="nav-right navbar-nav">
+
+
+            <li><a class="button button-dark button-small-tablet  button-active" href="https://knightlab.northwestern.edu/projects/" target="_blank">프로젝트</a></li>
+
+            <li><a class="button button-dark button-small-tablet  " href="https://studio.knightlab.com/" target="_blank">스튜디오</a></li>
+
+            <li><a class="button button-dark button-small-tablet  " href="https://localnewsinitiative.northwestern.edu/" target="_blank">지역 뉴스</a></li>
+
+            <li><a class="button button-dark button-small-tablet  " href="https://knightlab.northwestern.edu/posts/" target="_blank">게시글</a>
+            </li>
+
+            <li><a class="button button-dark button-small-tablet  " href="https://knightlab.northwestern.edu/community/" target="_blank">커뮤니티</a></li>
+
+        </ul>
+    </nav>
+
+    <header class="header-product">
+        <h1 class="product-logo product-logo-large">
+            SQL Murder Mystery
+        </h1>
+        <h2 class="product-tagline">범인이 누구인지 밝혀낼 수 있나요?</h2>
+    </header>
+
+    <div class="container">
+
+        <div id="intro" class="grid">
+            <div class="grid-item">
+                <img src="174092-clue-illustration.png" class="img-rounded" alt="단서 게시판을 바라보는 탐정의 그림.">
+                <p>
+                    SQL City에서 살인 사건이 발생했습니다! SQL Murder Mystery는 SQL 개념과 명령어를 자율적으로 학습할 수 있는 튜토리얼이자 숙련된 SQL 사용자가 흥미진진한 사건을 해결하는 재미있는 게임입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid-item">
+                <h2>SQL이 처음이신가요?</h2>
+                <p>
+                    이 연습은 튜토리얼이라기보다는 SQL 실전 연습을 위한 것입니다. SQL을 한 번도 사용해 본 적이 없다면 <a href="walkthrough.html">가이드를 확인해 보세요</a>. SQL을 체계적으로 배우고 싶다면 <a href="https://selectstarsql.com/">Select Star SQL</a>을 추천합니다.
+                </p>
+                <p>SQL에 익숙하다면 <a href="#experienced">아래에서 바로 시작하세요</a>!</p>
+            </div>
+        </div>
+
+
+        <div class="grid">
+            <div class="grid-item">
+                <h2 id="experienced">숙련된 SQL 탐정은 여기서 시작하세요</h2>
+                <p>
+                    사건이 발생하여 형사가 당신의 도움을 필요로 합니다. 형사가 범죄 현장 보고서를 주었지만 분실했습니다. 기억나는 것은 <strong>2018년 1월 15일</strong>에 <strong>SQL City</strong>에서 발생한 <strong>살인 사건</strong>이라는 점뿐입니다. 경찰 데이터베이스에서 사건 현장 보고서를 조회하는 것부터 시작하세요.
+                </p>
+
+                <h3>데이터베이스 구조 탐색</h3>
+
+                <p>
+                    숙련된 사용자는 쿼리를 통해 데이터베이스 구조를 파악할 수 있습니다. SQL Murder Mystery는 SQLite로 구축되었습니다. 이 SQL 명령을 실행하여 데이터베이스 테이블을 확인하세요.
+                </p>
+
+                <sql-exercise data-question="이 쿼리를 실행하여 데이터베이스의 테이블 목록을 확인하세요." data-comment="이 명령어는 SQLite 전용입니다. 다른 데이터베이스는 해당 문법을 확인해야 합니다." data-default-text="SELECT name 
+  FROM sqlite_master
+ where type = 'table'"></sql-exercise>
+
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid-item">
+                <p>
+                    테이블 이름 외에도 각 테이블의 구조를 알아야 합니다. SQLite에서 테이블 구조를 확인하는 방법은 다음과 같습니다.
+                </p>
+
+                <sql-exercise data-question="이 쿼리를 실행하여 `crime_scene_report` 테이블의 구조를 확인하세요." data-comment="'name' 값을 변경하여 이전 쿼리에서 확인한 다른 테이블의 구조도 살펴보세요." data-default-text="SELECT sql 
+  FROM sqlite_master
+ where name = 'crime_scene_report'"></sql-exercise>
+
+            </div>
+        </div>
+
+
+        <div class="grid">
+            <div class="grid-item">
+                <h3>이제 당신에게 달려 있습니다!</h3>
+                <p>
+                    SQL에 능숙하다면 이제부터 스스로 해결할 수 있습니다.
+                </p>
+                <p>
+                    스키마 다이어그램을 보려면 <a id="show-schema">여기를 클릭</a>하세요.
+                    <img id="experienced-schema" src="schema.png" width='1002' height='491'>
+                </p>
+                <p>
+                    언제든지 <a href="walkthrough.html">상세 가이드</a>를 참고할 수 있습니다.
+                </p>
+
+                <sql-exercise data-question="데이터베이스 스키마와 SQL 명령어를 활용하여 살인범을 찾아내세요." data-comment="정답을 찾았다고 생각되면 다음 섹션으로 이동하세요." data-default-text="
+              
+              
+
+
+
+              "></sql-exercise>
+                <!-- newlines in data-default-text force input to be larger -->
+            </div>
+        </div>
+
+        <div id="check-solution" class="grid">
+            <div class="grid-item">
+                <h3>정답 확인</h3>
+                <sql-exercise data-question="살인범을 찾으셨나요?" data-comment="" data-default-text="INSERT INTO solution VALUES (1, '찾아낸 사람의 이름을 여기에 입력하세요');
+        
+SELECT value FROM solution;"></sql-exercise>
+            </div>
+        </div>
+
+        <div id="credits" class="grid">
+            <div class="grid-item">
+                <h3>크레딧</h3>
+                <p>SQL Murder Mystery는 Knight Lab 펠로우인 <a href="https://twitter.com/joonparkmusic">Joon Park</a>과 <a href="https://twitter.com/Cathy_MeiyingHe">Cathy He</a>에 의해 제작되었습니다. 자세한 정보는 <a href="https://github.com/NUKnightLab/sql-mysteries">GitHub 저장소</a>를 확인하세요.</p>
+                <p>웹 각색 및 제작: <a href="https://twitter.com/joegermuska">Joe Germuska</a></p>
+                <p>영감: <a href="https://github.com/veltman/clmystery">이웃 Terminal City의 범죄 사건</a></p>
+                <p>웹 기반 SQL 구동: <a href="https://github.com/sql-js/sql.js/">SQL.js</a></p>
+                <p>커스텀 웹 컴포넌트: Zi Chong Kao (<a href="https://selectstarsql.com/">Select Star SQL</a> 제작자)</p>
+                <p>탐정 일러스트 제공: <a href="https://www.vecteezy.com/">Vectors by Vecteezy</a></p>
+                <p>원본 코드 라이선스: <a href="https://github.com/NUKnightLab/sql-mysteries/blob/master/LICENSE">MIT License</a></p>
+                <p>콘텐츠 라이선스: <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons CC BY-SA 4.0</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-knightlab--dark">
+        <div class="container">
+            <div class='grid grid-center'>
+                <div class='column-2 column-4-phone column-4-tablet'>
+                    <a href="http://knightlab.northwestern.edu" target="_blank">
+                        <img src="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/logo-knightlab-stacked-dark-small.png" style="margin-left:auto;">
+                    </a>
+                    <ul class="list--social text-align-center">
+                        <li><a class="link--no-style" href="http://www.twitter.com/knightlab" target="_blank" title="Knight Lab on Twitter"><span class="icon-twitter"></span></a></li>
+                        <li><a class="link--no-style" href="https://www.facebook.com/knightlab" target="_blank" title="Knight Lab on Facebook"><span class="icon-facebook"></span></a></li>
+                        <li><a class="link--no-style" href="https://github.com/NUKnightLab/" target="_blank" title="Knight Lab on GitHub"><span class="icon-github"></span></a></li>
+                    </ul>
+                </div>
+                <div class='column-4 column-5-tablet column-6-phone footer-description'>
+                    <p>
+                        <a title="Northwestern University" href="http://www.northwestern.edu/" target="_blank">노스웨스턴 대학교</a> Knight Lab은 뉴스 미디어 혁신을 연구하는 기술자 및 저널리스트 팀입니다.
+                    </p>
+                    <div class="grid-size-2 grid-size-2-phone">
+                        <div class="grid-item">
+                            <a title="Medill School of Journalism, Media, Integrated Marketing Communications" href="http://www.medill.northwestern.edu/" target="_blank">
+                                <img src="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/logo-medill-dark.png">
+                            </a>
+                        </div>
+
+                        <div class="grid-item">
+                            <a title="McCormick School of Engineering" href="http://www.mccormick.northwestern.edu/" target="_blank">
+                                <img src="https://cdn.knightlab.com/libs/orangeline/0.1.1/assets/logo-mccormick-dark.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-center">
+                <div class="grid-item">
+                    <address itemscope="" itemtype="http://data-vocabulary.org/Organization">
+            <span style="display:none;" itemprop="name"
+              title="Knight Lab | Advancing news media innovation through exploration and experimentation."
+              class="address-name">Knight Lab</span>
+            <span itemprop="tel" class="tel">(847) 467-4971</span>
+            <span itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address" class="address">
+              <span itemprop="street-address" class="street-address">1845 Sheridan Road</span>
+              <span class="room-num">Fisk #109 &amp; #111</span>
+              <div class="address-group">
+                <span itemprop="locality">Evanston,</span> <span itemprop="region">IL</span> <span
+                  itemprop="postal-code">60208 </span>
+                <span style="display:none;" itemprop="geo" itemscope="" itemtype="http://www.data-vocabulary.org/Geo/"
+                  class="geo">
+                  Latitude: <span itemprop="latitude">42.056893</span><br>Longitude:
+                  <span itemprop="longitude">-87.676735</span>
+                </span>
+                <a style="display:none;" href="http://knightlab.northwestern.edu" itemprop="url" class="url">Northwesten
+                  University Knight Lab | Advancing media innovation through exploration and experimentation.</a>
+              </div>
+            </span>
+          </address>
+                    <span class="copyright">© Copyright 2019 Northwestern University</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.knightlab.com/libs/orangeline/0.1.1/js/orangeline.js"></script>
+    <script type="text/javascript">
+        document.querySelector('#show-schema').addEventListener('click', function() {
+            document.querySelector('#experienced-schema').classList.add('show');
+        });
+    </script>
+
+</body>
+
+</html>
